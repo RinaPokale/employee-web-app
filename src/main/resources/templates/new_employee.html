@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous">
+</head>
+<body>
+  <div class="container my-5">
+    <!--    <h1> Employee Tracker </h1>-->
+    <!--    <hr>-->
+    <h2>Save Employee Details</h2>
+  </div>
+
+  <div class="container">
+    <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="post">
+      <div class="col-7">
+        <input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{address}" placeholder="Address" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{email}" placeholder="Email Address" class="form-control mb-4 col-4">
+        <input type="tel" th:field="*{phoneNum}" placeholder="Mobile Number" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{gender}" placeholder="Gender" class="form-control mb-4 col-4">
+      </div>
+      <button type="submit" class="btn btn-success col-2"> Save Employee </button>
+    </form>
+  </div>
+
+  <div class="container my-3">
+    <a th:href="@{/}"> << Back to Employee List</a>
+  </div>
+
+</body>
+</html>
